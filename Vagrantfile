@@ -38,17 +38,19 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+  # Provider-specific configuration 
+   config.vm.provider "virtualbox" do |v|
+     v.name = "AOS_dev_vm"
+     # Uncomment the next line to display the VirtualBox GUI when booting the machine
+     #v.gui = true
+     # Customize the amount of memory on the VM:
+     v.memory = "1024"
+     v.cpus = 2
+
+     # Enable hardware 3D acceleration
+     v.customize ["modifyvm", :id, "--accelerate3d", "on"]
+     # Did not add IDE controller option.
+   end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -60,11 +62,6 @@ Vagrant.configure(2) do |config|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
 
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   sudo apt-get update
-  #   sudo apt-get install -y apache2
-  # SHELL
+  # Enable provisioning with the shell script provision.sh.
+   config.vm.provision :shell, path: "provision.sh"
 end
