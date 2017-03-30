@@ -41,6 +41,8 @@ Vagrant.configure(2) do |config|
   # Provider-specific configuration 
    config.vm.provider "virtualbox" do |v|
      v.name = "AOS_dev_vm"
+     # Cap CPU usage to 50% of host.
+     v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
      # Uncomment the next line to display the VirtualBox GUI when booting the machine
      #v.gui = true
      # Customize the amount of memory on the VM:
