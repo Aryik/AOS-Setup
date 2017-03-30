@@ -21,3 +21,9 @@ pip install pymavlink MAVProxy
 apt-get install -y xvfb # for testing ardupilot "headless"
 
 apt-get install -y vim # Because vim is better than EMACS
+
+# install desktop environment xfce and virtualbox additions only if necessary
+# apt-get install -y xfce4 virtualbox-gues-dkms virtualbox-guest-utils virtualbox-guest-x11
+# Permit any user to start the GUI
+#sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
+
