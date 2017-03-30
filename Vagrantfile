@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
      # Uncomment the next line to display the VirtualBox GUI when booting the machine
      #v.gui = true
      # Customize the amount of memory on the VM:
-     v.memory = "1024"
+     v.memory = "4096"
      v.cpus = 2
 
      # Enable hardware 3D acceleration
