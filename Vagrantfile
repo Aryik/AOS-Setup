@@ -48,7 +48,7 @@ Vagrant.configure(2) do |config|
      v.cpus = 2
 
      # Enable hardware 3D acceleration
-     v.customize ["modifyvm", :id, "--accelerate3d", "on"]
+     # v.customize ["modifyvm", :id, "--accelerate3d", "on"]
      # Did not add IDE controller option.
    end
   #
