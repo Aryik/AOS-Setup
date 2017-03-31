@@ -4,7 +4,7 @@ apt-get update
 
 echo "installing development tools needed by the AOS project"
 apt-get install -y sudo
-adduser logname sudo
+adduser vagrant sudo
 
 #Sudo is not necessary because vagrant executes the script as root
 apt-get install -y gcc-multilib g++-multilib cmake make git gitk git-gui
@@ -21,6 +21,8 @@ pip install pymavlink MAVProxy
 apt-get install -y xvfb # for testing ardupilot "headless"
 
 apt-get install -y vim # Because vim is better than EMACS
+
+apt-get install default-jdk
 
 # install desktop environment xfce and virtualbox additions only if necessary
 # apt-get install -y xfce4 virtualbox-gues-dkms virtualbox-guest-utils virtualbox-guest-x11
