@@ -14,7 +14,7 @@ apt-get install -y ccache python-pip python-pexpect
 apt-get install -y automake autoconf libexpat1-dev libtool-bin
 apt-get install -y python-zmq
 
-apt-get install bison flex
+apt-get install -y bison flex
 
 apt-get remove ModemManager
 
