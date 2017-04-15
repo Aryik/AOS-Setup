@@ -24,7 +24,7 @@ apt-get install -y xvfb # for testing ardupilot "headless"
 
 apt-get install -y vim # Because vim is better than EMACS
 
-apt-get install default-jdk
+apt-get install -y default-jdk
 
 # install desktop environment xfce and virtualbox additions only if necessary
 # apt-get install -y xfce4 virtualbox-gues-dkms virtualbox-guest-utils virtualbox-guest-x11
